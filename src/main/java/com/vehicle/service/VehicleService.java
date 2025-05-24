@@ -3,6 +3,9 @@ package com.vehicle.service;
 import com.vehicle.dao.VehicleDAO;
 import com.vehicle.model.Vehicle;
 import com.vehicle.exception.VehicleNotFoundException;
+import com.vehicle.model.enums.RentalPeriod;
+import com.vehicle.model.enums.VehicleType;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -73,5 +76,11 @@ public class VehicleService {
         }
 
         return basePrice.multiply(multiplier);
+    }
+
+    public BigDecimal calculateRentalPrice(Vehicle vehicle, RentalPeriod period) {
+    }
+
+    public List<Vehicle> getVehiclesByType(VehicleType vehicleType, int page, int pageSize) {
     }
 }

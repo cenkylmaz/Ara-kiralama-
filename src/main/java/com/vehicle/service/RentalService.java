@@ -6,13 +6,15 @@ import com.vehicle.model.Rental;
 import com.vehicle.model.User;
 import com.vehicle.model.Vehicle;
 import com.vehicle.exception.RentalException;
+import com.vehicle.model.enums.RentalPeriod;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class RentalService {
-    private RentalDAO rentalDAO;
+    private com.vehicle.service.RentalDAO rentalDAO;
     private VehicleDAO vehicleDAO;
     private VehicleService vehicleService;
 
@@ -102,5 +104,8 @@ public class RentalService {
             return vehicle.getPrice().multiply(new BigDecimal("0.1"));
         }
         return BigDecimal.ZERO;
+    }
+
+    private class RentalDAO extends com.vehicle.service.RentalDAO {
     }
 }

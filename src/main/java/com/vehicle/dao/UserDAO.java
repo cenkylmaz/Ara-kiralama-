@@ -49,7 +49,7 @@ public class UserDAO {
         user.setName(rs.getString("name"));
         user.setEmail(rs.getString("email"));
         user.setPassword(rs.getString("password"));
-        user.setUserType(UserType.valueOf(rs.getString("user_type")));
+        user.getUserType(UserType.valueOf(rs.getString("user_type")));
         user.setBirthDate(rs.getDate("birth_date").toLocalDate());
         return user;
     }

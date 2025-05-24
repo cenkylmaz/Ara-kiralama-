@@ -1,5 +1,7 @@
 package com.vehicle.model;
 
+import com.vehicle.model.enums.VehicleType;
+
 import java.math.BigDecimal;
 
 public class Vehicle {
@@ -61,6 +63,8 @@ public class Vehicle {
         return price;
     }
 
+    public void setAvailable(boolean b) {
+    }
 
 
     // Constructors, getters, setters

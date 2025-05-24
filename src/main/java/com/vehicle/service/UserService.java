@@ -3,6 +3,8 @@ package com.vehicle.service;
 import com.vehicle.dao.UserDAO;
 import com.vehicle.model.User;
 import com.vehicle.exception.AuthException;
+import com.vehicle.model.enums.UserType;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -82,5 +84,8 @@ public class UserService {
 
     public int calculateUserAge(User user) {
         return Period.between(user.getBirthDate(), LocalDate.now()).getYears();
+    }
+
+    public User register(String name, String email, String password, UserType userType, LocalDate birthDate) {
     }
 }

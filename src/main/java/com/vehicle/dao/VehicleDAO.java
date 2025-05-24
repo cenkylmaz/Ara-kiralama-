@@ -30,7 +30,7 @@ public class VehicleDAO {
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, type.toString());
+            stmt.setString(1, type.name());
             stmt.setInt(2, limit);
             stmt.setInt(3, offset);
             ResultSet rs = stmt.executeQuery();

@@ -1,6 +1,8 @@
 package com.vehicle;
 
+import com.vehicle.dao.DBConnection;
 import com.vehicle.model.Rental;
+import com.vehicle.model.enums.RentalPeriod;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -51,8 +53,8 @@ public class RentalDAO {
                 rental.setId(rs.getInt("id"));
                 rental.setUserId(rs.getInt("user_id"));
                 rental.setVehicleId(rs.getInt("vehicle_id"));
-                rental.setStartDate(rs.getTimestamp("start_date").toLocalDateTime());
-                rental.setEndDate(rs.getTimestamp("end_date").toLocalDateTime());
+                rental.setStartDate(String.valueOf(rs.getTimestamp("start_date").toLocalDateTime()));
+                rental.setEndDate(String.valueOf(rs.getTimestamp("end_date").toLocalDateTime()));
                 rental.setRentalPeriod(RentalPeriod.valueOf(rs.getString("rental_period")));
                 rental.setTotalPrice(rs.getBigDecimal("total_price"));
                 rental.setDepositAmount(rs.getBigDecimal("deposit_amount"));
